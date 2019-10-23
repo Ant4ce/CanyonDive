@@ -63,8 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bird\BirdMovement.cs" />
+    <Compile Include="Assets\Scripts\ButtonsMenu\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraMove.cs" />
+    <Compile Include="Assets\Scripts\DeathScreen\Homehandler.cs" />
+    <Compile Include="Assets\Scripts\DeathScreen\RestartButton.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/wesse/Desktop/UNT 2.1/Camera Dev/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

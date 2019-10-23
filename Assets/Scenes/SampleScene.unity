@@ -270,6 +270,8 @@ MonoBehaviour:
   target: {fileID: 1425398070}
   smoothingspeed: 0.1
   min_Y_offset: -2.6
+  thingToFollow: {fileID: 0}
+  speed: 2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

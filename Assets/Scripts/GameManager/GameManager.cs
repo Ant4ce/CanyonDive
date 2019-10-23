@@ -13,14 +13,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    //public void PlayGame()
+    //{
+    //    Invoke("LoadGameplay", 0.1f);
+    //}
+
+    public void StartMenu()
     {
-        Invoke("LoadGameplay", 0.1f);
+        Invoke("LoadMenu", 0.2f);
     }
 
-    void LoadGameplay()
+    //void LoadGameplay()
+    //{
+    //    UnityEngine.SceneManagement.SceneManager.LoadScene("BaseScene");
+    //}
+
+    void LoadMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("BaseScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("PostDeath");
+
     }
 
 
