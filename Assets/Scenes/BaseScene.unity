@@ -271,7 +271,7 @@ MonoBehaviour:
   smoothingspeed: 0.1
   min_Y_offset: -2.6
   thingToFollow: {fileID: 1425398067}
-  speed: 1.53
+  speed: 7.18
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
