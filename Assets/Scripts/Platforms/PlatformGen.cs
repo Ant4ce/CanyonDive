@@ -41,9 +41,9 @@ public class PlatformGen : MonoBehaviour
         var height = currentposition.y;
         if (lastPlatformPosition.y <= height + 100f)
         {
-            BoxCollider2D Platforms;
+            BoxCollider2D platforms;
             Vector3 newPlatformPosition = NewPlatform(lastPlatformPosition, horizontalRange, height);
-            Platforms = Instantiate(platform1, newPlatformPosition , currentrotation) as BoxCollider2D;
+            platforms = Instantiate(platform1, newPlatformPosition , currentrotation) as BoxCollider2D;
         }
     }
     
