@@ -27,9 +27,11 @@
           <e p="GameManager" t="Include">
             <e p="GameManager.cs" t="Include" />
           </e>
-          <e p="Moveup.cs" t="Include" />
-          <e p="PlatformDestr.cs" t="Include" />
-          <e p="PlatformGen.cs" t="Include" />
+          <e p="Platforms" t="Include">
+            <e p="Moveup.cs" t="Include" />
+            <e p="PlatformDestr.cs" t="Include" />
+            <e p="PlatformGen.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Camera Dev.sln" t="IncludeFlat" />

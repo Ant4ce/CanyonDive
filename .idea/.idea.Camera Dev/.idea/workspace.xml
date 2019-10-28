@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="931c4a06-b277-46cc-ab5d-f01cadd35e68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/Moveup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/Moveup.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformDestr.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformGen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Testplatform.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Testplatform.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Camera Dev/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Camera Dev/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Camera Dev/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Camera Dev/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Camera Dev/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Camera Dev/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Camera Dev/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Camera Dev/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Icons UI.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BaseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BaseScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PostDeath.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PostDeath.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen/Homehandler.cs.meta~HEAD" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformGen.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen/Homehandler.cs.meta~feature-gamemechanics" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen/RestartButton.cs.meta~HEAD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen/RestartButton.cs.meta~HEAD_0" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformDestr.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen/RestartButton.cs.meta~feature-gamemechanics" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathScreen/RestartButton.cs.meta~feature-gamemechanics_0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UsableIcons/36.png.meta~HEAD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UsableIcons/36.png.meta~feature-gamemechanics" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UsableIcons/61.png.meta~HEAD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UsableIcons/61.png.meta~feature-gamemechanics" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformDestr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformDestr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformGen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformGen.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,17 +18,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Platforms/Moveup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/BaseScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Platforms/Moveup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Testplatform.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformGen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformDestr.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Canyon dive/Assets/scripts/PlatformGen.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlatformGen.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlatformDestr.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformGen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Platforms/PlatformDestr.cs" />
       </list>
     </option>
   </component>
