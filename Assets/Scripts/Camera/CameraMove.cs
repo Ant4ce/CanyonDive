@@ -11,27 +11,29 @@ public class CameraMove : MonoBehaviour
     private float speedMultiplier = 1f;
     //variable to hold and update the y position of the player object
     private float fheight;
-    //
+    //used to determine speed increase
     private float rapidite = 1f;
 
     [SerializeField]
     private float accelf = 0.5f;
     
-
-    void Update()
+    // method to calculate the speed of upwards motion by the camera at different heights
+    void FixedUpdate()
     {
-        fheight = transform.position.y ;
+        fheight = transform.position.y;
 
 
         if (fheight < 100)
         {
-            transform.Translate(Vector3.up * Time.deltaTime * speedMultiplier);
+            transform.Translate(Vector3.up * Time.deltaTime );
         }
-        if (fheight >= 100 && fheight < 500)        
+        else if (fheight < 500)
         {
             rapidite += accelf;
-            transform.Translate(Vector3.up * Time.deltaTime * speedMultiplier * rapidite);
-        }if (fheight >= 500)
+            transform.Translate(Vector3.up * Time.deltaTime * rapidite);
+            Debug.Log(Vector3.up * Time.deltaTime * rapidite);
+        }
+        else
         {
             rapidite += accelf;
             transform.Translate(Vector3.up * Time.deltaTime * rapidite);

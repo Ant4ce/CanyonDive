@@ -59,3 +59,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 .directory
+/Assets/Scripts/ButtonsMenu.meta~HEAD
+/Assets/Scripts/DeathScreen.meta~feature-gamemechanics
+/Assets/Scripts/DeathScreen.meta~HEAD
+/Assets/Scripts/ButtonsMenu.meta~feature-gamemechanics
