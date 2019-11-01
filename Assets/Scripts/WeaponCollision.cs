@@ -15,7 +15,7 @@ public class WeaponCollision : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         body.bodyType = RigidbodyType2D.Dynamic;
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Bird");
         weaponTeleport.onHitCoolDown = true;
         Debug.Log(weaponTeleport.onHitCoolDown);
 
@@ -33,7 +33,7 @@ public class WeaponCollision : MonoBehaviour
         Debug.Log("Collision");
         body.bodyType = RigidbodyType2D.Static;
 
-        if (col.gameObject.name == "Platforms")
+        if (col.collider.tag == "PlatformsTag")
         {
             player.transform.position = this.transform.position;
             weaponTeleport.onHitCoolDown = false;
