@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 750956292}
   m_Layer: 0
   m_Name: PlayerBounds
-  m_TagString: Untagged
+  m_TagString: PlatformsTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2138,6 +2138,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 834037068}
     m_Modifications:
+    - target: {fileID: 1350578359231677217, guid: 5faa70b77bfa7964ab88e7873de69cc6,
+        type: 3}
+      propertyPath: m_Name
+      value: HeldWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350578359231677217, guid: 5faa70b77bfa7964ab88e7873de69cc6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: -5738581131015634613, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -2172,16 +2182,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseFullKinematicContacts
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350578359231677217, guid: 5faa70b77bfa7964ab88e7873de69cc6,
-        type: 3}
-      propertyPath: m_Name
-      value: HeldWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350578359231677217, guid: 5faa70b77bfa7964ab88e7873de69cc6,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4520021141667639922, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
