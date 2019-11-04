@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 233949228}
   - component: {fileID: 233949227}
   - component: {fileID: 233949229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallR
   m_TagString: PlatformsTag
   m_Icon: {fileID: 0}
@@ -302,8 +302,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233949226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.9293, y: 0.2882613, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: 11.9293, y: -1.1, z: 0}
+  m_LocalScale: {x: 1, y: 12.292529, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -636,7 +636,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 18.1}
+  m_Size: {x: 1.28, y: 40}
   m_EdgeRadius: 0
 --- !u!61 &750956293
 BoxCollider2D:
@@ -662,7 +662,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 19.08}
+  m_Size: {x: 1.28, y: 40}
   m_EdgeRadius: 0
 --- !u!1 &818944836
 GameObject:
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 1013059248}
   - component: {fileID: 1013059247}
   - component: {fileID: 1013059249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallL
   m_TagString: PlatformsTag
   m_Icon: {fileID: 0}
@@ -908,8 +908,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013059246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.235525, y: 0.3967991, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalPosition: {x: -9.235525, y: -1.22, z: 0}
+  m_LocalScale: {x: 1, y: 12.464, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1276,6 +1276,7 @@ GameObject:
   - component: {fileID: 1425398072}
   - component: {fileID: 1425398071}
   - component: {fileID: 1425398073}
+  - component: {fileID: 1425398074}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -1430,6 +1431,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0360541, y: 1.7147387}
   m_EdgeRadius: 0
+--- !u!114 &1425398074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425398067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a398670b1acca49a4552d35391d070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  wallJumpStrength: 40
 --- !u!1 &1454794419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,8 +1914,8 @@ GameObject:
   - component: {fileID: 1977366142}
   - component: {fileID: 1977366141}
   - component: {fileID: 1977366140}
-  m_Layer: 0
-  m_Name: SquareWhite
+  m_Layer: 8
+  m_Name: BaseGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

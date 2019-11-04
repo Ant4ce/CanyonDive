@@ -31,7 +31,6 @@ public class CameraMove : MonoBehaviour
         {
             rapidite += accelf;
             transform.Translate(Vector3.up * Time.deltaTime * rapidite);
-            Debug.Log(Vector3.up * Time.deltaTime * rapidite);
         }
         else
         {
