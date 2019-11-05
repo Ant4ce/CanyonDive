@@ -12,12 +12,13 @@ public class PlatformGen : MonoBehaviour
     public BoxCollider2D platform1;
     public Rigidbody2D player;
     
+    private Transform current;
     private Vector3 lastPlatformPosition;
     private Vector3 currentPosition;
-    private Transform current;
     private Quaternion currentRotation;
-    [Range(0,20f)] public float horizontalRange = 9f; //TODO: adept flexibly to screen size
+    private float horizontalRange;
     private float camHorizontalPosition;
+    private float cameraHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,10 @@ public class PlatformGen : MonoBehaviour
         lastPlatformPosition = currentPosition;
         lastPlatformPosition.y = lastPlatformPosition.y - 5f;
         lastPlatformPosition.z = player.transform.position.z;
+        
+        var cam = GetComponent<Camera>();
+        cameraHeight = cam.orthographicSize;
+        horizontalRange = cam.aspect * cameraHeight;
     }
 
     void Update()
@@ -40,7 +45,7 @@ public class PlatformGen : MonoBehaviour
     private void FixedUpdate()
     {
         var height = current.position.y;
-        if (lastPlatformPosition.y <= height + 100f)
+        if (lastPlatformPosition.y <= height + cameraHeight + 5f)
         {
             BoxCollider2D platforms;
             Vector3 newPlatformPosition = NewPlatform(lastPlatformPosition, horizontalRange, height);
