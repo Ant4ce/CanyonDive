@@ -14,14 +14,15 @@ public class PlatformGen : MonoBehaviour
     
     private Vector3 lastPlatformPosition;
     private Vector3 currentPosition;
+    private Transform current;
     private Quaternion currentRotation;
-    private float[] horizontalRange = {-2.5f, 2.5f}; //TODO: adept flexibly to screen size
+    [Range(0,20f)] public float horizontalRange = 9f; //TODO: adept flexibly to screen size
     private float camHorizontalPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        Transform current = GetComponent<Transform>();
+        current = GetComponent<Transform>();
         currentPosition = current.position;
         currentRotation = current.rotation;
         camHorizontalPosition = currentPosition.x;
@@ -38,7 +39,7 @@ public class PlatformGen : MonoBehaviour
     //get current position and generate Platforms in limited range above
     private void FixedUpdate()
     {
-        var height = currentPosition.y;
+        var height = current.position.y;
         if (lastPlatformPosition.y <= height + 100f)
         {
             BoxCollider2D platforms;
@@ -48,12 +49,12 @@ public class PlatformGen : MonoBehaviour
     }
     
     //This is the method defining the Platforms position and distance
-    private Vector3 NewPlatform(Vector3 oldPlatform, float[] horizontalRange, float height)
+    private Vector3 NewPlatform(Vector3 oldPlatform, float horizontalRange, float height)
     {
         Vector3 newPlatform;
-        newPlatform.x = camHorizontalPosition + Random.Range(horizontalRange[0],horizontalRange[1]);
+        newPlatform.x = camHorizontalPosition + Random.Range(-horizontalRange,horizontalRange);
         var randomHeightMod = height * Random.Range(0.02f, 0.026f);
-        newPlatform.y = 3f + oldPlatform.y + 1.01f * height + Random.Range(-randomHeightMod, randomHeightMod);
+        newPlatform.y = 9f + oldPlatform.y + (0.025f * height) + Random.Range(-randomHeightMod, randomHeightMod);
         newPlatform.z = oldPlatform.z;
         lastPlatformPosition = newPlatform;
         return newPlatform;
