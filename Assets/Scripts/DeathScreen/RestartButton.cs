@@ -9,5 +9,6 @@ public class RestartButton : MonoBehaviour
     {
         //GameManager.instance.PlayGame();
         SceneManager.LoadScene("BaseScene");
+        weaponTeleport.onHitCoolDown = false;
     }
 }

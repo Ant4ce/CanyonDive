@@ -6,14 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonHandler : MonoBehaviour
 {
-    //private void OnMouseOver()
-    //{
-        
-    //}
 
     private void OnMouseDown()
     {
         //GameManager.instance.PlayGame();
         SceneManager.LoadScene("BaseScene");
+        weaponTeleport.onHitCoolDown = false;
     }
 }
