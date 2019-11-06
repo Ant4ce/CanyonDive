@@ -579,7 +579,7 @@ MonoBehaviour:
   weaponStart: {fileID: 834037067}
   wHolder: {fileID: 930237272}
   heldWeapon: {fileID: 2209489655794321636}
-  throwSpeed: 15
+  throwSpeed: 30
 --- !u!1 &663123327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,7 +2034,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.039990425, y: -5.47}
+  m_Offset: {x: -1.49, y: -7.21}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2045,7 +2045,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18.135427, y: 1}
+  m_Size: {x: 30, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1977366139
 GameObject:
@@ -2362,22 +2362,22 @@ PrefabInstance:
     - target: {fileID: 4520021141667639922, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4520021141667639922, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4520021141667639922, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4520021141667639922, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4520021141667639922, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
@@ -2397,7 +2397,7 @@ PrefabInstance:
     - target: {fileID: 4520021141667639922, guid: 5faa70b77bfa7964ab88e7873de69cc6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6746226778648699569, guid: 5faa70b77bfa7964ab88e7873de69cc6, type: 3}
