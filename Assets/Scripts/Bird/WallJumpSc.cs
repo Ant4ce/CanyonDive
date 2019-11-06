@@ -27,9 +27,7 @@ public class WallJumpSc : MonoBehaviour
     {
         //creating 3 rays, one down, one left and one right. Each of length 0.5f
         RaycastHit2D hitleft = Physics2D.Raycast(transform.position, Vector2.left, 1.5f, groundlayer);
-        Debug.Log(hitleft.collider != null);
         RaycastHit2D hitdown = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundlayer);
-        //Debug.Log(hitdown.collider != null);
         RaycastHit2D hitright = Physics2D.Raycast(transform.position, Vector2.right, 1.5f, groundlayer);
 
         //checks the appropriate rays to see whether conditions for a wall jump are met and if so makes the wall jump happen
@@ -42,15 +40,5 @@ public class WallJumpSc : MonoBehaviour
         {
             rbjp.AddForce(vec2wr * wallJumpStrength * 10);
         }
-        //else if (Input.GetButtonDown("Jump") && (hitdown.collider != null))
-        //{
-
-        //    velocity.y = jumpTakeOffSpeed;
-        //    if (Input.GetButtonUp("Jump") && velocity.y > 0)
-        //    {
-        //        velocity.y = velocity.y * 0.5f;
-        //    }
-
-        //}
     }
 }
