@@ -13,12 +13,14 @@ public class PlatformGen : MonoBehaviour
     public Rigidbody2D player;
     
     public static Transform current;
+    public static float CameraHeight;    
+    
     private Vector3 lastPlatformPosition;
     private Vector3 currentPosition;
     private Quaternion currentRotation;
     private float horizontalRange;
     private float camHorizontalPosition;
-    public static float CameraHeight;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,10 +65,5 @@ public class PlatformGen : MonoBehaviour
         newPlatform.z = oldPlatform.z;
         lastPlatformPosition = newPlatform;
         return newPlatform;
-    }
-
-    public static Transform GetHeight()
-    {
-        return current;
     }
 }

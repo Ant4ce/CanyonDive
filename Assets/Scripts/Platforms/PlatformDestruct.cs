@@ -6,25 +6,20 @@ public class PlatformDestruct : MonoBehaviour
 {
 	private float screenheight;
 	private float platformheight;
-	private float playerheight;
+	private Vector3 playerPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        Transform playerPosition = PlatformGen.GetHeight();
-		playerheight = playerPosition.GetComponent<Transform>().position.y;
 		platformheight = GetComponent<Transform>().position.y;
 		screenheight = PlatformGen.CameraHeight;
-		Debug.Log(playerheight);
-		Debug.Log(screenheight);
     }
 
     // Update is called once per frame
     void Update()
     {
-	    Debug.Log(playerheight);
+	    var playerheight = PlatformGen.current.position.y;
 	    if (platformheight <= playerheight - screenheight){
-	        //Debug.Log(platformheight);
 			Destroy(gameObject);	
 		}
     }    
