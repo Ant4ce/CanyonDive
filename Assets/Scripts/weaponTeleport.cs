@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class weaponTeleport : MonoBehaviour
 {
-    //Need to create a Raycast that takes a mouseclick as input to determin the vector and have a velocity increase to that position
-    // The player model then gets a linecast and changes position to the weapon position
     // Start is called before the first frame update
-    //Cursor Object
+    //Public Section
     public GameObject marker;
     //Player Object
     public GameObject player;
@@ -19,38 +17,52 @@ public class weaponTeleport : MonoBehaviour
     public float throwSpeed = 20.0f;
     public static bool onHitCoolDown = false;
 
-    //Location of the Mouse
+    //Private Section
     private Vector3 target;
+    private Vector2 startTouchPosition;
+    private Vector3 draggingTouchPosition;
+    private Vector3 endTouchPosition;
+    private bool tap, swipe;
     void Start()
     {
-        //hide Cursor
-        Cursor.visible = false;
+        // Cursor.visible = false;
     }
 
     void Update()
     {
-        //Display mouse Position and keep track of it
-        //Uses camera as main Object to be independant from PlayerObject
-        //Displays a cursor on mouse position and keeps trackk of the position
+        tap = swipe = false;
+        #region Standalone Inputs
+        //Display mouse Position
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
-        marker.transform.position = new Vector2(target.x, target.y );
+        //marker.transform.position = new Vector2(target.x, target.y );
 
         //Shows the difference between player and marker
-        Vector3 difference = target - player.transform.position;
+        Vector3 difference = draggingTouchPosition - player.transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         wHolder.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         
-        //if statement for left mouse button event
-        //should take the difference and create a direction, calls throwSword method after calculating direction
+        
         if (Input.GetMouseButtonDown(0) && onHitCoolDown == false)
+        {
+            tap = true;
+            startTouchPosition = Input.mousePosition;
+            
+           
+            
+        }
+        else if (Input.GetMouseButton(0))
+        { 
+            draggingTouchPosition = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+        }
+        else if (Input.GetMouseButtonUp(0) && onHitCoolDown == false)
         {
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
             direction.Normalize();
             throwSword(direction, rotationZ);
-            
         }
 
+        
         if (onHitCoolDown == false)
         {
             heldWeapon.SetActive(true);
@@ -59,7 +71,33 @@ public class weaponTeleport : MonoBehaviour
         {
             heldWeapon.SetActive(false);
         }
-        //should instantiate a Prefab and give it a velocity to the direction of the mouse cursor.
+        #endregion
+        #region Mobile Input
+        
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            startTouchPosition = Input.GetTouch(0).position;
+            tap = true;
+        }
+        else if (Input.touchCount > 1 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            Touch touch = Input.GetTouch(0);
+            draggingTouchPosition = transform.GetComponent<Camera>()
+                .ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, transform.position.z));
+        }
+        
+
+        else if (Input.touchCount > 9 && Input.GetTouch(0).phase == TouchPhase.Ended && onHitCoolDown == false)
+        {
+            endTouchPosition = Input.GetTouch(0).position;
+            float distance = difference.magnitude;
+            Vector2 direction = difference / distance;
+            direction.Normalize();
+            throwSword(direction, rotationZ);
+        }
+        
+        #endregion
+        
         void throwSword(Vector2 direction, float rotation)
         {
             GameObject w = Instantiate(weaponPrefab) as GameObject;
@@ -71,10 +109,5 @@ public class weaponTeleport : MonoBehaviour
         }
     }
 }
-//Use WeaponPrefab as GameObject. Don't instantiate it. Instead give the normal one a velocity. Use it's vectors to establish a raycast direction
-//When player position == Weapon position reset weapon position to the previous local scale
-//Weapon can move in the direction aimed by adding rotation (see old tutorial)
-// If collisionenter start timer or use player position to == object positin b4 destroying
 
 
-// 1.Destoy Object       2. Teleport player to object          3.Put delay
