@@ -17,7 +17,7 @@ public class WeaponCollision : MonoBehaviour
         body.bodyType = RigidbodyType2D.Dynamic;
         player = GameObject.Find("Bird");
         weaponTeleport.onHitCoolDown = true;
-        Debug.Log(weaponTeleport.onHitCoolDown);
+        //Debug.Log(weaponTeleport.onHitCoolDown);
 
     }
 
@@ -30,14 +30,14 @@ public class WeaponCollision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         
-        Debug.Log("Collision");
+        //Debug.Log("Collision");
         body.bodyType = RigidbodyType2D.Static;
 
         if (col.collider.tag == "PlatformsTag")
         {
             player.transform.position = this.transform.position;
             weaponTeleport.onHitCoolDown = false;
-            Debug.Log(weaponTeleport.onHitCoolDown);
+            //Debug.Log(weaponTeleport.onHitCoolDown);
             Destroy(gameObject);
         }
         //else if (col.gameObject.tag = "Enemy")
