@@ -64,7 +64,12 @@ public class weaponTeleport : MonoBehaviour
         {
             GameObject w = Instantiate(weaponPrefab) as GameObject;
             w.transform.position = weaponStart.transform.position;
+<<<<<<< HEAD:Assets/Scripts/Weapons/weaponTeleport.cs
             w.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+=======
+            //W.W -90f on z rotation to match up the rotation of held weapon and fired weapon
+            w.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90f);
+>>>>>>> Sprites_Update:Assets/Scripts/Weapons/weaponTeleport.cs
             w.GetComponent<Rigidbody2D>().velocity = direction * throwSpeed;
             
             
