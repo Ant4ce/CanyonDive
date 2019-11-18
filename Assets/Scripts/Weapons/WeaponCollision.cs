@@ -17,11 +17,7 @@ public class WeaponCollision : MonoBehaviour
         body.bodyType = RigidbodyType2D.Dynamic;
         player = GameObject.Find("Bird");
         weaponTeleport.onHitCoolDown = true;
-<<<<<<< HEAD:Assets/Scripts/Weapons/WeaponCollision.cs
-        Debug.Log(weaponTeleport.onHitCoolDown);
-=======
         //Debug.Log(weaponTeleport.onHitCoolDown);
->>>>>>> Sprites_Update:Assets/Scripts/Weapons/WeaponCollision.cs
 
     }
 
@@ -34,22 +30,14 @@ public class WeaponCollision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         
-<<<<<<< HEAD:Assets/Scripts/Weapons/WeaponCollision.cs
-        Debug.Log("Collision");
-=======
         //Debug.Log("Collision");
->>>>>>> Sprites_Update:Assets/Scripts/Weapons/WeaponCollision.cs
         body.bodyType = RigidbodyType2D.Static;
 
         if (col.collider.tag == "PlatformsTag")
         {
             player.transform.position = this.transform.position;
             weaponTeleport.onHitCoolDown = false;
-<<<<<<< HEAD:Assets/Scripts/Weapons/WeaponCollision.cs
-            Debug.Log(weaponTeleport.onHitCoolDown);
-=======
             //Debug.Log(weaponTeleport.onHitCoolDown);
->>>>>>> Sprites_Update:Assets/Scripts/Weapons/WeaponCollision.cs
             Destroy(gameObject);
         }
         //else if (col.gameObject.tag = "Enemy")

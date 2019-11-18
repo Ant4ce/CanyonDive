@@ -1,9 +1,6 @@
 fileFormatVersion: 2
 guid: 0e97dd25821f80f4eacefd19bc5a25ad
 TextureImporter:
-<<<<<<< HEAD
-  internalIDToNameTable: []
-=======
   internalIDToNameTable:
   - first:
       213: -3242038115637843228
@@ -17,7 +14,6 @@ TextureImporter:
   - first:
       213: -94775388686197187
     second: crn-clmb_3
->>>>>>> Sprites_Update
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -56,11 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
-  spriteMode: 1
-=======
   spriteMode: 2
->>>>>>> Sprites_Update
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -90,11 +82,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-=======
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -218,7 +205,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
->>>>>>> Sprites_Update
     outline: []
     physicsShape: []
     bones: []
