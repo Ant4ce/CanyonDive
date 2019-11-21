@@ -24,15 +24,15 @@ namespace ScoreUpkeeper
         // Update is called once per frame
         void Update()
         {
-            ScoreCalcing calcMe = new ScoreCalcing();
+            //ScoreCalcing calcMe = new ScoreCalcing();
             actualheight = BirdToFollow.transform.position.y;
-            score.text = "Score: " + calcMe.ScoreCalculator(actualheight, startingheight);
+            score.text = "Score: " + ScoreCalcing.ScoreCalculator(actualheight, startingheight);
         }
 
     }
     public class ScoreCalcing
     {
-        public float ScoreCalculator(float currentH, float startingH)
+        public static float ScoreCalculator(float currentH, float startingH)
         {
             // Mathf.floor is used to round down to the largest whole number so that we dont see all the decimal numbers
             float finalH = Mathf.Floor(currentH - startingH);
