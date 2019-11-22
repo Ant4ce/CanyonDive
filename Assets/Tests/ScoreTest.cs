@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.TestTools;
 
 namespace Tests
 {
@@ -14,8 +11,8 @@ namespace Tests
         {
             //var nameSpaceHolder = new ScoreUpkeeper();
 
-            float Hend = 198;
-            float Hstart = 34;
+            float Hend = Random.Range(0,1000);
+            float Hstart = Random.Range(0,999);
 
             float expectedH = Mathf.Floor(Hend - Hstart);
             float foundH = ScoreUpkeeper.ScoreCalcing.ScoreCalculator(Hend, Hstart);
