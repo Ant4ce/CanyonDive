@@ -1,57 +1,48 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using UnityEngine;
+﻿using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
 public class PlatformGen : MonoBehaviour
 {
-    public BoxCollider2D platform1;
+    public BoxCollider2D platformPrefab;
     public Rigidbody2D player;
     
-    public static Transform current;
-    public static float CameraHeight;    
+    public static Transform Current;
+    public static float VerticalCameraSize;    
     
     private Vector3 lastPlatformPosition;
-    private Vector3 currentPosition;
-    private Quaternion currentRotation;
-    private float horizontalRange;
-    private float camHorizontalPosition;
+    private Vector3 currentPlayerPosition;
+    private Quaternion currentPlayerRotation;
+    private float horizontalCameraSize;
+    private float horizontalCameraPosition;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        current = GetComponent<Transform>();
-        currentPosition = current.position;
-        currentRotation = current.rotation;
-        camHorizontalPosition = currentPosition.x;
-        lastPlatformPosition = currentPosition;
+        Current = GetComponent<Transform>();
+        currentPlayerPosition = Current.position;
+        currentPlayerRotation = Current.rotation;
+        horizontalCameraPosition = currentPlayerPosition.x;
+        lastPlatformPosition = currentPlayerPosition;
         lastPlatformPosition.y = lastPlatformPosition.y - 5f;
         lastPlatformPosition.z = player.transform.position.z;
         
         var cam = GetComponent<Camera>();
-        CameraHeight = cam.orthographicSize;
-        horizontalRange = cam.aspect * CameraHeight;
-    }
-
-    void Update()
-    {
-        
+        VerticalCameraSize = cam.orthographicSize;
+        horizontalCameraSize = cam.aspect * VerticalCameraSize;
     }
     
     //get current position and generate Platforms in limited range above
     private void FixedUpdate()
     {
-        var height = current.position.y;
-        if (lastPlatformPosition.y <= height + CameraHeight + 5f)
+        var playerHeight = Current.position.y;
+        if (lastPlatformPosition.y <= playerHeight + VerticalCameraSize + 5f)
         {
             BoxCollider2D platforms;
-            Vector3 newPlatformPosition = NewPlatform(lastPlatformPosition, horizontalRange, height);
-            platforms = Instantiate(platform1, newPlatformPosition , currentRotation) as BoxCollider2D;
+            Vector3 newPlatformPosition = NewPlatform(lastPlatformPosition, horizontalCameraSize, playerHeight);
+            platforms = Instantiate(platformPrefab, newPlatformPosition , currentPlayerRotation) as BoxCollider2D;
         }
     }
     
@@ -59,8 +50,9 @@ public class PlatformGen : MonoBehaviour
     private Vector3 NewPlatform(Vector3 oldPlatform, float horizontalRange, float height)
     {
         Vector3 newPlatform;
-        newPlatform.x = camHorizontalPosition + Random.Range(-horizontalRange,horizontalRange);
-        var randomHeightMod = height * Random.Range(0.02f, 0.026f);
+        newPlatform.x = horizontalCameraPosition + Random.Range(-horizontalRange,horizontalRange);
+        //defining vertical position of the platforms, based on scaling and random modifier
+        var randomHeightMod = height * Random.Range(0.02f, 0.026f); 
         newPlatform.y = 9f + oldPlatform.y + (0.025f * height) + Random.Range(-randomHeightMod, randomHeightMod);
         newPlatform.z = oldPlatform.z;
         lastPlatformPosition = newPlatform;

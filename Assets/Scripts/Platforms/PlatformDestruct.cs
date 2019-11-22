@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class PlatformDestruct : MonoBehaviour
 {
-	private float screenheight;
-	private float platformheight;
+	private float screenHeight;
+	private float platformHeight;
 	private Vector3 playerPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-		platformheight = GetComponent<Transform>().position.y;
-		screenheight = PlatformGen.CameraHeight;
+		platformHeight = GetComponent<Transform>().position.y;
+		screenHeight = PlatformGen.VerticalCameraSize;
     }
 
     // Update is called once per frame
     void Update()
     {
-	    var playerheight = PlatformGen.current.position.y;
-	    if (platformheight <= playerheight - screenheight){
+	    var playerheight = PlatformGen.Current.position.y;
+	    if (platformHeight <= playerheight - screenHeight){
 			Destroy(gameObject);	
 		}
     }    
