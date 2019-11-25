@@ -1,48 +1,28 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private Rigidbody2D body;
-   // private GameObject weapon = GameObject.Find("");
     public GameObject player;
-    public GameObject weaponPrefab;
+
+    private Rigidbody2D _weaponRigidBody;
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
-        body.bodyType = RigidbodyType2D.Dynamic;
+        _weaponRigidBody = GetComponent<Rigidbody2D>();
+        _weaponRigidBody.bodyType = RigidbodyType2D.Dynamic;
         player = GameObject.Find("Bird");
-        weaponTeleport.onHitCoolDown = true;
-        //Debug.Log(weaponTeleport.onHitCoolDown);
-
+        weaponTeleport.OnHitCoolDownReset = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    //If the GameObject, which in this case is a projectile, collides with an object it becomes sticky
+    //If the GameObject collides, changes RigidBodytype to static
     void OnCollisionEnter2D(Collision2D col)
     {
-        
-        //Debug.Log("Collision");
-        body.bodyType = RigidbodyType2D.Static;
+        _weaponRigidBody.bodyType = RigidbodyType2D.Static;
 
         if (col.collider.tag == "PlatformsTag")
         {
             player.transform.position = this.transform.position;
-            weaponTeleport.onHitCoolDown = false;
-            //Debug.Log(weaponTeleport.onHitCoolDown);
+            weaponTeleport.OnHitCoolDownReset = false;
             Destroy(gameObject);
         }
-        //else if (col.gameObject.tag = "Enemy")
-        //{
-        //    
-        //}
     }
 }

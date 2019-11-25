@@ -11,38 +11,38 @@ public class PlatformGen : MonoBehaviour
     public static Transform Current;
     public static float VerticalCameraSize;    
     
-    private Vector3 lastPlatformPosition;
-    private Vector3 currentPlayerPosition;
-    private Quaternion currentPlayerRotation;
-    private float horizontalCameraSize;
-    private float horizontalCameraPosition;
+    private Vector3 _lastPlatformPosition;
+    private Vector3 _currentPlayerPosition;
+    private Quaternion _currentPlayerRotation;
+    private float _horizontalCameraSize;
+    private float _horizontalCameraPosition;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Current = GetComponent<Transform>();
-        currentPlayerPosition = Current.position;
-        currentPlayerRotation = Current.rotation;
-        horizontalCameraPosition = currentPlayerPosition.x;
-        lastPlatformPosition = currentPlayerPosition;
-        lastPlatformPosition.y = lastPlatformPosition.y - 5f;
-        lastPlatformPosition.z = player.transform.position.z;
-        
         var cam = GetComponent<Camera>();
         VerticalCameraSize = cam.orthographicSize;
-        horizontalCameraSize = cam.aspect * VerticalCameraSize;
+        _horizontalCameraSize = cam.aspect * VerticalCameraSize;
+
+        Current = GetComponent<Transform>();
+        _currentPlayerPosition = Current.position;
+        _currentPlayerRotation = Current.rotation;
+        _horizontalCameraPosition = _currentPlayerPosition.x;
+        _lastPlatformPosition = _currentPlayerPosition;
+        _lastPlatformPosition.y -= VerticalCameraSize;
+        _lastPlatformPosition.z = player.transform.position.z;
     }
     
     //get current position and generate Platforms in limited range above
     private void FixedUpdate()
     {
         var playerHeight = Current.position.y;
-        if (lastPlatformPosition.y <= playerHeight + VerticalCameraSize + 5f)
+        if (_lastPlatformPosition.y <= playerHeight + VerticalCameraSize + 5f)
         {
             BoxCollider2D platforms;
-            Vector3 newPlatformPosition = NewPlatform(lastPlatformPosition, horizontalCameraSize, playerHeight);
-            platforms = Instantiate(platformPrefab, newPlatformPosition , currentPlayerRotation) as BoxCollider2D;
+            Vector3 newPlatformPosition = NewPlatform(_lastPlatformPosition, _horizontalCameraSize, playerHeight);
+            platforms = Instantiate(platformPrefab, newPlatformPosition , _currentPlayerRotation) as BoxCollider2D;
         }
     }
     
@@ -50,12 +50,12 @@ public class PlatformGen : MonoBehaviour
     private Vector3 NewPlatform(Vector3 oldPlatform, float horizontalRange, float height)
     {
         Vector3 newPlatform;
-        newPlatform.x = horizontalCameraPosition + Random.Range(-horizontalRange,horizontalRange);
+        newPlatform.x = _horizontalCameraPosition + Random.Range(-horizontalRange,horizontalRange);
         //defining vertical position of the platforms, based on scaling and random modifier
         var randomHeightMod = height * Random.Range(0.02f, 0.026f); 
         newPlatform.y = 9f + oldPlatform.y + (0.025f * height) + Random.Range(-randomHeightMod, randomHeightMod);
         newPlatform.z = oldPlatform.z;
-        lastPlatformPosition = newPlatform;
+        _lastPlatformPosition = newPlatform;
         return newPlatform;
     }
 }

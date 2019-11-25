@@ -467,10 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b3aee1a988343468813d2866fd8dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1425398070}
-  smoothingspeed: 0.1
-  min_Y_offset: 4
-  thingToFollow: {fileID: 1425398067}
+  player: {fileID: 1425398067}
   speed: 7.18
 --- !u!20 &519420031
 Camera:
@@ -572,12 +569,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a183a48a1965c6047b81b11ee4ae83ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marker: {fileID: 1531058807}
   player: {fileID: 1425398067}
   weaponPrefab: {fileID: 1350578359231677217, guid: 5faa70b77bfa7964ab88e7873de69cc6,
     type: 3}
-  weaponStart: {fileID: 834037067}
-  wHolder: {fileID: 930237272}
+  throwOriginPoint: {fileID: 834037067}
+  rotationAxisForWeapon: {fileID: 930237272}
   heldWeapon: {fileID: 2209489655794321636}
   throwSpeed: 30
 --- !u!1 &663123327
@@ -2457,4 +2453,4 @@ MonoBehaviour:
   groundlayer:
     serializedVersion: 2
     m_Bits: 256
-  inside: 0
+  insideCheck: 0

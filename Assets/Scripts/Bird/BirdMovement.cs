@@ -41,7 +41,7 @@ public class BirdMovement : MonoBehaviour
     {
         if(target.tag == "BirdFall")
         {
-            GameManager.instance.StartMenu();
+            GameManager.Instance.StartMenu();
         }
     }
 }

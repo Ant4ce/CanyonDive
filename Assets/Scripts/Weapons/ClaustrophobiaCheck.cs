@@ -1,20 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ClaustrophobiaCheck : MonoBehaviour
 {
-    private Rigidbody2D rbwp;
     public LayerMask groundlayer;
-    public bool inside = false;
+    public bool insideCheck = false;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        rbwp = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         Claustrophobia();
@@ -22,29 +12,20 @@ public class ClaustrophobiaCheck : MonoBehaviour
 
     void Claustrophobia()
     {
-        RaycastHit2D hitleft = Physics2D.Raycast(transform.position, Vector2.left, 1.5f, groundlayer);
-        RaycastHit2D hitdown = Physics2D.Raycast(transform.position, Vector2.down, 1.5f, groundlayer);
-        RaycastHit2D hitright = Physics2D.Raycast(transform.position, Vector2.right, 1.5f, groundlayer);
-        RaycastHit2D hitup = Physics2D.Raycast(transform.position, Vector2.up, 1.5f, groundlayer);
+        var weaponPosition = transform.position;
+        float rayLength = 1.5f;
+        RaycastHit2D hitLeft = Physics2D.Raycast(weaponPosition, Vector2.left, rayLength, groundlayer);
+        RaycastHit2D hitRight = Physics2D.Raycast(weaponPosition, Vector2.right, rayLength, groundlayer);
+        RaycastHit2D hitUp = Physics2D.Raycast(weaponPosition, Vector2.up, rayLength, groundlayer);
+        RaycastHit2D hitDown = Physics2D.Raycast(weaponPosition, Vector2.down, rayLength, groundlayer);
 
-        //Debug.Log(hitleft);
-        //Debug.Log(hitright);
-        //Debug.Log(hitup);
-        //Debug.Log(hitdown);
-
-        //Debug.Log(inside);
-
-        //Debug.DrawRay(transform.position, Vector2.up *100, Color.red);
-
-        if (hitdown.collider != null && hitleft.collider != null && hitright.collider != null && hitup.collider != null)
+        if (hitDown.collider == true && hitLeft.collider == true && hitRight.collider == true && hitUp.collider == true)
         {
-            //Debug.Log("inside");
-            inside = true;
+            insideCheck = true;
         }
         else
         {
-            //Debug.Log("not inside");
-            inside = false;
+            insideCheck = false;
         }
     }
 }
