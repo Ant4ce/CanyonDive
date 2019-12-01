@@ -1,0 +1,14 @@
+{
+    "name": "BirdTests",
+    "references": [
+        "GUID:bfce724da2a45dd438b7cf244ae97a26"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

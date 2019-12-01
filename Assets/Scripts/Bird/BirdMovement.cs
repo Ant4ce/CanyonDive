@@ -10,6 +10,7 @@ public class BirdMovement : MonoBehaviour
     public float jumppower;
     Vector2 vec2up = new Vector2(0, 1);
 
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();

@@ -60,6 +60,7 @@ public class WallJumpSc : MonoBehaviour
     private void FallingAnimation()
     {
         animator.SetBool("IsFalling", true);
+        animator.GetBool("IsFalling");
     }
 
     private void IdleAnimation()
