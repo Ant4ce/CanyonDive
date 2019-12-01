@@ -3,7 +3,7 @@
 public class WeaponCollision : MonoBehaviour
 {
     public GameObject player;
-
+    public static Vector3 _weaponPosition;
     private Rigidbody2D _weaponRigidBody;
     void Start()
     {
@@ -20,7 +20,17 @@ public class WeaponCollision : MonoBehaviour
 
         if (col.collider.tag == "PlatformsTag")
         {
-            player.transform.position = this.transform.position;
+            _weaponPosition = GetComponent<Transform>().position;
+
+            Debug.Log("hit a collider");
+            try
+            {
+                player.transform.position = this.transform.position;
+            }
+            catch
+            {
+                Debug.Log("can't change player position");
+            }
             weaponTeleport.OnHitCoolDownReset = false;
             Destroy(gameObject);
         }
