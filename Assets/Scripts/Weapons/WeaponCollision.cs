@@ -18,7 +18,7 @@ public class WeaponCollision : MonoBehaviour
     {
         _weaponRigidBody.bodyType = RigidbodyType2D.Static;
 
-        if (col.collider.tag == "PlatformsTag")
+        if (col.collider.tag == "Platform")
         {
             _weaponPosition = GetComponent<Transform>().position;
 

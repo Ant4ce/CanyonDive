@@ -5,8 +5,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlatformGen : MonoBehaviour
 {
-    public BoxCollider2D platformPrefab;
-    public Rigidbody2D player;
+    public GameObject platformPrefab;
+    public GameObject player;
     
     public static Transform Current;
     public static float VerticalCameraSize;    
@@ -38,11 +38,11 @@ public class PlatformGen : MonoBehaviour
     private void FixedUpdate()
     {
         var playerHeight = Current.position.y;
-        if (_lastPlatformPosition.y <= playerHeight + VerticalCameraSize + 5f)
+        if (_lastPlatformPosition.y <= playerHeight + VerticalCameraSize + 2f)
         {
-            BoxCollider2D platforms;
+            GameObject platforms;
             Vector3 newPlatformPosition = NewPlatform(_lastPlatformPosition, _horizontalCameraSize, playerHeight);
-            platforms = Instantiate(platformPrefab, newPlatformPosition , _currentPlayerRotation) as BoxCollider2D;
+            platforms = Instantiate(platformPrefab, newPlatformPosition , _currentPlayerRotation) as GameObject;
         }
     }
     

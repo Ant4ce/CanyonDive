@@ -56,7 +56,7 @@ namespace Tests
 
 
             _wall = GameObject.Instantiate(new GameObject(), new Vector3(6, 0, 0), Quaternion.identity);
-            _wall.tag = "PlatformsTag";
+            _wall.tag = "Platform";
             _wall.AddComponent(typeof(BoxCollider2D));
             
         }
