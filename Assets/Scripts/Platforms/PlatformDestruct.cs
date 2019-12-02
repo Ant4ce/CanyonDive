@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlatformDestruct : MonoBehaviour
 {
@@ -19,8 +17,9 @@ public class PlatformDestruct : MonoBehaviour
     void Update()
     {
 	    var playerheight = PlatformGen.Current.position.y;
-	    if (platformHeight <= playerheight - screenHeight){
-			Destroy(gameObject);	
-		}
-    }    
+	    if (platformHeight <= playerheight - screenHeight)
+	    {
+		    Destroy(gameObject);
+	    }
+    }
 }
