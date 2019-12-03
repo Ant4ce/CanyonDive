@@ -5,28 +5,29 @@ namespace ScoreUpkeeper
 {
     public class ScoreUpkeep : MonoBehaviour
     {
-        // variable to save starting height, used for score calculation
-        private float startingHeight;
-        private float actualHeight;
-        Text scoreText;
         public GameObject player;
+
+        private float _startingHeight;
+        private float _actualHeight;
+        Text scoreText;
 
         void Start()
         {
             scoreText = GetComponent<Text>();
-            startingHeight = player.transform.position.y;
+            _startingHeight = player.transform.position.y;
         }
 
         void Update()
         {
-            actualHeight = player.transform.position.y;
-            scoreText.text = "Score: " + ScoreCalcing.ScoreCalculator(actualHeight, startingHeight);
+            _actualHeight = player.transform.position.y;
+            scoreText.text = "Score: " + ScoreCalculating.CalculatScore(_actualHeight, _startingHeight);
         }
 
     }
-    public class ScoreCalcing
+    public class ScoreCalculating
     {
-        public static float ScoreCalculator(float currentHeight, float startingHeight)
+        //Calculates score based on height gained since start
+        public static float CalculatScore(float currentHeight, float startingHeight)
         {
             // Mathf.floor is used to round down to the largest whole number
             float score = Mathf.Floor(currentHeight - startingHeight);

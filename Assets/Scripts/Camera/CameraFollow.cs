@@ -12,12 +12,11 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        SmoothStalk();
+        SmoothCameraFollow();
     }
     // method that follows the player but doesnt snap to player instantly, rather it catches up
-    void SmoothStalk()
+    void SmoothCameraFollow()
     {
-        // multiply by deltatime to make sure it is independant of frame rate
         float interpolation = _speed * Time.deltaTime;
         Vector3 targetPosition = this.transform.position;
         //Mathf.Max is used here to ensure that the lerp only can follow the player up not down. 

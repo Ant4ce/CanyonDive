@@ -8,32 +8,31 @@ public class WallJumpSc : MonoBehaviour
     public LayerMask groundlayer;
     public float wallJumpStrength = 4;
 
-    private SpriteRenderer spriterender;
-    private Rigidbody2D rigidBodyJump;
-    private Vector2 upLeftVector = new Vector2(-1, 1);
+    private SpriteRenderer _spriterender;
+    private Rigidbody2D _rigidBodyJump;
+    private Vector2 _upLeftVector = new Vector2(-1, 1);
 
-    // Start is called before the first frame update
     void Awake()
     {
-        rigidBodyJump = GetComponent<Rigidbody2D>();
-        spriterender = GetComponent<SpriteRenderer>();
+        _rigidBodyJump = GetComponent<Rigidbody2D>();
+        _spriterender = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        var fallspeed = rigidBodyJump.velocity.y;
+        var fallSpeed = _rigidBodyJump.velocity.y;
         ResetAnimation();
-        if (fallspeed < 0)
+        if (fallSpeed < 0)
         {
             FallingAnimation();
-        }else if(fallspeed == 0)
+        }else if(fallSpeed == 0)
         {
             IdleAnimation();
         }
-        Jumper();
+        WallJumping();
     }
 
-    void Jumper()
+    void WallJumping()
     {
         var playerPosition = transform.position;
         //length of raycast determined through testing with sprite dimensions, to give accurate depiction
@@ -45,15 +44,15 @@ public class WallJumpSc : MonoBehaviour
 
         if ((raycastLeft.collider != null) && Input.GetButtonDown("Jump2") && (raycastDown.collider == null))
         {   
-            spriterender.flipX = false;
+            _spriterender.flipX = false;
             JumpingAnimation();
-            rigidBodyJump.AddForce(Vector2.one * wallJumpStrength * 10);
+            _rigidBodyJump.AddForce(Vector2.one * wallJumpStrength * 10);
         }
         else if ((raycastRight.collider != null) && Input.GetButtonDown("Jump2") && (raycastDown.collider == null))
         {
-            spriterender.flipX = true;
+            _spriterender.flipX = true;
             JumpingAnimation();
-            rigidBodyJump.AddForce(upLeftVector * wallJumpStrength * 10);
+            _rigidBodyJump.AddForce(_upLeftVector * wallJumpStrength * 10);
         }
     }
 
