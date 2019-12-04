@@ -6,11 +6,11 @@ public class WallJumpSc : MonoBehaviour
 {
     public Animator animator;
     public LayerMask groundlayer;
-    public float wallJumpStrength = 4;
+    public static float wallJumpStrength = 4;
 
     private SpriteRenderer _spriterender;
     private Rigidbody2D _rigidBodyJump;
-    private Vector2 _upLeftVector = new Vector2(-1, 1);
+    private static Vector2 _upLeftVector = new Vector2(-1, 1);
 
     void Awake()
     {
@@ -43,17 +43,27 @@ public class WallJumpSc : MonoBehaviour
         //checks the appropriate rays to see whether conditions for a wall jump are met and if so makes the wall jump happen
 
         if ((raycastLeft.collider != null) && Input.GetButtonDown("Jump2") && (raycastDown.collider == null))
-        {   
+        {
             _spriterender.flipX = false;
             JumpingAnimation();
-            _rigidBodyJump.AddForce(Vector2.one * wallJumpStrength * 10);
+            WallJumpRight(_rigidBodyJump);
         }
         else if ((raycastRight.collider != null) && Input.GetButtonDown("Jump2") && (raycastDown.collider == null))
         {
             _spriterender.flipX = true;
             JumpingAnimation();
-            _rigidBodyJump.AddForce(_upLeftVector * wallJumpStrength * 10);
+            WallJumpLeft(_rigidBodyJump);
         }
+    }
+
+    public static void WallJumpRight(Rigidbody2D playerRigidBody)
+    {
+        playerRigidBody.AddForce(Vector2.one * wallJumpStrength * 200);
+    }
+
+    public static void WallJumpLeft(Rigidbody2D playerRigidbody)
+    {
+        playerRigidbody.AddForce(_upLeftVector * wallJumpStrength * 200);
     }
 
     private void FallingAnimation()

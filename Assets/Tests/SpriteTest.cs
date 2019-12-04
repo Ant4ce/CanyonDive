@@ -37,6 +37,9 @@ namespace Tests
 
             Assert.AreEqual(true, player.GetComponent<Animator>().GetBool("IsSteady"), "The IsSteady was false");
 
+            Object.Destroy(player);
+            Object.Destroy(platformToStand);
+
             yield return null;
 
         }
