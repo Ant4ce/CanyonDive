@@ -34,9 +34,12 @@ namespace Tests
             player2.GetComponent<SpriteRenderer>().flipX = true;
 
             yield return new WaitForSeconds(0.2f);
-            Assert.AreEqual(false, player.GetComponent<Animator>().GetBool("IsFalling"), "He is not jumping");
-            Assert.AreEqual(false, player2.GetComponent<Animator>().GetBool("IsFalling"), "He is not jumping");
-            yield return new WaitForSeconds(3f);
+            Assert.Greater(player.GetComponent<Transform>().position.y, 0f);
+            Assert.Greater(player2.GetComponent<Transform>().position.y, 0f);
+            Assert.Less(player2.GetComponent<Transform>().position.x, 0.5f);
+            Assert.Greater(player.GetComponent<Transform>().position.x, 3f);
+
+            yield return new WaitForSeconds(2f);
             Assert.AreEqual(true, player.GetComponent<Animator>().GetBool("IsFalling"), "He is not falling");
             Assert.AreEqual(true, player2.GetComponent<Animator>().GetBool("IsFalling"), "He is not falling");
 

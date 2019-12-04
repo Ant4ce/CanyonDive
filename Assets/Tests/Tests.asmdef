@@ -5,8 +5,7 @@
         "UnityEditor.TestRunner",
         "ScoreTest",
         "BirdTests",
-        "WeaponTests",
-        "PlayerScripts"
+        "WeaponTests"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
