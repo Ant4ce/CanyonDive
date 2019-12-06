@@ -53,7 +53,7 @@ namespace Tests
             var oldHighestPlatform = 0f;
             var oldPlayerHeight = testPlayer.transform.position.y;
             oldHighestPlatform = GetHighestPlatform(oldHighestPlatform);
-            testPlayer.transform.position += Vector3.up * 5;
+            testPlayer.transform.position += Vector3.up * 15;
             yield return new WaitForSeconds(1f);
             var newHighest = GetHighestPlatform(oldHighestPlatform);
             Assert.IsTrue(testPlayer.transform.position.y > oldPlayerHeight, "testPlayer-Object did not move up");
